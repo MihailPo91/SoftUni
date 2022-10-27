@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!-- Catalog with Albums-->
+    <section id="catalogPage">
+        {% if not all_albums %}
+        <!--  If No albums in catalog -->
+            <p>No Albums in Catalog!</p>
+        {% else %}
+        <!-- If albums in catalog -->
+
+        <h1>All Albums</h1>
+            {% for album in all_albums %}
+                {% include 'partials/album_card.html' %}
+                {% if forloop.counter0|divisibleby:3 %}
+                    <div>
+
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </section>
+{% endblock %}
