@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block content %}
+
+    {% if not all_games %}
+    <!-- Display paragraph: If there are no games-->
+            <p class="no-articles">No games yet</p>
+    {% else %}
+    <!-- Display div "game" with information about every game (if any)-->
+        <section id="welcome-world">
+
+            {% for game in all_games %}
+                {% include 'partials/game_card.html' %}
+            {% endfor %}
+
+        </section>
+    {% endif %}
+
+{% endblock %}
