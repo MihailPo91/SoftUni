@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <card>
+
+        <h3>Confirm delete book.</h3>
+        <form method="post">
+            {% csrf_token %}
+            <input class="button submit" type="submit" value="Delete">
+        </form>
+
+    </card>
+
+
+{% endblock %}
